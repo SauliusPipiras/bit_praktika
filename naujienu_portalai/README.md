@@ -1,1 +1,1 @@
-Source control in VS Code
+Source control in VSCode
