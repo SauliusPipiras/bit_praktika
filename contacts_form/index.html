@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Kontaktu_forma</title>
+</head>
+<body>
+
+   <h1>Kontaktų forma</h1>
+
+   <form action="./pridavimas.html" method="GET">
+      <fieldset>
+         <legend>Kontaktinė informacija</legend>
+         <div>
+            <label>
+               Jūsų vardas:
+               <input type="text" placeholder="Jūsų vardas" name="name" minlength="2" maxlength="50" required>
+            </label>
+         </div>
+         <div>
+            <label>
+               Jūsų pavardė:
+               <input type="text" placeholder="Jūsų pavardė" name="lastname" minlength="2" maxlength="50" required>
+            </label>
+         </div>
+         <div>
+            <label>
+               Telefono numeris:
+               <input type="text" name="phonenumber" minlength="5" maxlength="11" pattern="\+?\d+" required>
+            </label>
+         </div>
+      </fieldset>
+      <fieldset>
+         <legend>Užklausa</legend>
+         <div>
+            <label>
+               Jūsų žinutė:
+               <textarea name="message" placeholder="Jūsų žinutė..." minlength="20" maxlength="500" required></textarea>
+            </label>
+         </div>
+      </fieldset>
+      <div>
+         <button>Pateikti</button>
+      </div>
+   </form>
+
+</body>
+</html>
