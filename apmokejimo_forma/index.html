@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Apmokejimo_forma</title>
+</head>
+<body>
+   <h1>Apmokėjimo forma</h1>
+   <p>Privalomi laukai pažymėti &#42234;&#42;</p>
+   <h2>Kontaktinė informacija</h2>
+
+   <form action="./pridavimas.html" method="GET">
+      <fieldset>
+         <legend>Kreipinys</legend>
+         <div>
+            <input type="radio" name="title" value="Ponas" required>
+            <label>Ponas</label>
+         </div>
+         <div>
+            <input type="radio" name="title" value="Ponia" required>
+            <label>Ponia</label>
+         </div>
+         <div>
+            <input type="radio" name="title" value="Nesakysiu" required>
+            <label>Nesakysiu</label>
+         </div>
+      </fieldset><br>
+      <div>
+         <label> Vardas:&#42234;&#42;
+            <input type="text" name="name" minlength="2" maxlength="50" required>
+         </label>
+      </div>
+      <div><br>
+         <label> Pavardė:&#42234;&#42;
+            <input type="text" name="lastname" minlength="2" maxlength="50" required>
+         </label>
+      </div>
+      <div><br>
+         <label> El. paštas:&#42234;&#42;
+            <input type="email" name="email" required>
+         </label>
+      </div>
+      <div><br>
+         <label> Slaptažodis:&#42234;&#42;
+            <input type="password" name="password" minlength="5" required>
+         </label>
+      </div>
+
+      <h2>Apmokėjimo informacija</h2>
+
+      <div>
+         <label>Kortelės tipas:
+            <select name="cardtype">
+               <option value="visa">VISA</option>
+               <option value="mc">Mastercard</option>
+               <option value="amex">American Express</option>
+            </select>
+         </label>
+      </div><br>
+      <div>
+         <label>Kortelės numeris:&#42234;&#42;
+            <input type="text" name="cardnumber" pattern="\d{15,16}" required>
+         </label>
+      </div><br>
+      <div>
+         <label>Galiojimo data:&#42234;&#42; <em>pateikite mmmm.mm.dd formatu</em>
+            <input type="date" name="expiration" min="2022-02-11" required>
+         </label>
+      </div><br>
+      <button>Pateikti</button>
+   </form>
+   
+</body>
+</html>
