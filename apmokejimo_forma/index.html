@@ -7,70 +7,103 @@
    <title>Apmokejimo_forma</title>
 </head>
 <body>
-   <h1>Apmokėjimo forma</h1>
-   <p>Privalomi laukai pažymėti &#42234;&#42;</p>
-   <h2>Kontaktinė informacija</h2>
-
-   <form action="./pridavimas.html" method="GET">
-      <fieldset>
-         <legend>Kreipinys</legend>
-         <div>
-            <input type="radio" name="title" value="Ponas" required>
-            <label>Ponas</label>
-         </div>
-         <div>
-            <input type="radio" name="title" value="Ponia" required>
-            <label>Ponia</label>
-         </div>
-         <div>
-            <input type="radio" name="title" value="Nesakysiu" required>
-            <label>Nesakysiu</label>
-         </div>
-      </fieldset><br>
-      <div>
-         <label> Vardas:&#42234;&#42;
-            <input type="text" name="name" minlength="2" maxlength="50" required>
-         </label>
-      </div>
-      <div><br>
-         <label> Pavardė:&#42234;&#42;
-            <input type="text" name="lastname" minlength="2" maxlength="50" required>
-         </label>
-      </div>
-      <div><br>
-         <label> El. paštas:&#42234;&#42;
-            <input type="email" name="email" required>
-         </label>
-      </div>
-      <div><br>
-         <label> Slaptažodis:&#42234;&#42;
-            <input type="password" name="password" minlength="5" required>
-         </label>
-      </div>
-
-      <h2>Apmokėjimo informacija</h2>
-
-      <div>
-         <label>Kortelės tipas:
-            <select name="cardtype">
-               <option value="visa">VISA</option>
-               <option value="mc">Mastercard</option>
-               <option value="amex">American Express</option>
-            </select>
-         </label>
-      </div><br>
-      <div>
-         <label>Kortelės numeris:&#42234;&#42;
-            <input type="text" name="cardnumber" pattern="\d{15,16}" required>
-         </label>
-      </div><br>
-      <div>
-         <label>Galiojimo data:&#42234;&#42; <em>pateikite mmmm.mm.dd formatu</em>
-            <input type="date" name="expiration" min="2022-02-11" required>
-         </label>
-      </div><br>
-      <button>Pateikti</button>
+   <form action="./pridavimas.html" method="post">
+      <h1>Apmokėjimo forma</h1>
+      <p>Privalomi laukai pažymėti <strong><abbr title="privalomas">*</abbr></strong></p>
+      <section>
+         <h2>Kontaktinė informacija</h2>
+         <fieldset>
+            <legend>Kreipinys</legend>
+            <div>
+               <label for="title_1">
+                  <input type="radio" id="title_1" name="title" value="mr" required>
+                  Ponas
+               </label>
+            </div>
+            <div>
+               <label for="title_2">
+                  <input type="radio" id="title_2" name="title" value="mrs" required>
+                  Ponia
+               </label>
+            </div>
+            <div>
+               <label for="title_3">
+                  <input type="radio" id="title_3" name="title" value="unknown" required>
+                  Nesakysiu
+               </label>
+            </div>
+         </fieldset>
+         <p>
+            <label> 
+               <span>Vardas: </span>
+               <strong><abbr title="privalomas">*</abbr></strong>
+               <input type="text" name="name" minlength="2" maxlength="50" required>
+            </label>
+         </p>
+         <p>
+            <label> 
+               <span>Pavardė: </span>
+               <strong><abbr title="privalomas">*</abbr></strong>
+               <input type="text" name="lastname" minlength="2" maxlength="50" required>
+            </label>
+         </p>
+         <p>
+            <label> 
+               <span>El. paštas: </span>
+               <strong><abbr title="privalomas">*</abbr></strong>
+               <input type="email" name="lastname" required>
+            </label>
+         </p>
+         <p>
+            <label> 
+               <span>Slaptažodis: </span>
+               <strong><abbr title="privalomas">*</abbr></strong>
+               <input type="password" name="password" required>
+            </label>
+         </p>
+      </section>
+      <section>
+         <h2>Apmokėjimo informacija</h2>
+         <p>
+            <label>
+               <span>Kortelės tipas: </span>
+               <select name="cardtype" required>
+                  <option value="visa">VISA</option>
+                  <option value="mc">Mastercard</option>
+                  <option value="amex">American Express</option>
+               </select>
+            </label>
+         </p>
+         <p>
+            <label>
+               <span>Kortelės numeris: </span>
+               <strong><abbr title="privalomas">*</abbr></strong>
+               <!-- Reguliari išraiška: https://regex101.com/r/uW8mC3/1 -->
+                        <!-- 
+                            Keletas validžių pavyzdžių.
+                            4510123456781234
+                            373342709912345
+                            5410123412344567
+                        -->
+               <input 
+                  type="text" 
+                  name="cardnumber" 
+                  pattern="\d{15,16}" 
+                  required>
+            </label>
+         </p>
+         <p>
+            <label>
+               <span>Galiojimo data:</span>
+               <strong><abbr title="privalomas">*</abbr></strong>
+               <em>pateikite mmmm.mm.dd formatu</em>
+               <input type="date" name="expiration" min="2022-02-14" required>
+            </label>
+         </p>
+      </section>
+      <section>
+         <p><button>Pateikti</button></p>
+      </section>
    </form>
-   
 </body>
 </html>
